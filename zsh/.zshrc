@@ -1,12 +1,14 @@
+# OH-MY-ZSH
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR=nano
+# EDITOR
+export EDITOR=nvim
 
-#ALIAS
+# ALIASES
 alias ll='ls -la'
 alias gst='git status'
 alias ga='git add'
@@ -15,3 +17,16 @@ alias gco='git checkout'
 alias g='git'
 alias gb='git --no-pager branch'
 alias gcm='git commit'
+
+# COLORS
+autoload -Uz colors && colors
+setopt PROMPT_SUBST
+
+# PROMPT minimalista
+PROMPT='%F{green}%n@%m%f %F{blue}%~%f %# '
+
+# Terminal title
+precmd() {
+  print -Pn "\e]0;%n@%m: %~\a"
+}
+
