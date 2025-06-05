@@ -22,8 +22,8 @@ alias gcm='git commit'
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
-# PROMPT minimalista
-PROMPT='%F{green}%n@%m%f %F{blue}%~%f %# '
+# PROMPT 
+PROMPT='%F{yellow}%n%f:%F{blue}%~%f $ '
 
 # Terminal title
 precmd() {
