@@ -4,7 +4,7 @@ Minimal configuration for Zsh and Alacritty, designed for a clean and efficient 
 
 ## Features
 
-- Zsh with Powerlevel10k prompt
+- Zsh 
 - Alacritty with custom theme and font
 - Git aliases for common commands
 - Simple installation script
