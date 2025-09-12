@@ -70,7 +70,7 @@ fi
 
 # NodeJS and Bun (React)
 if command -v asdf >/dev/null 2>&1; then
-    asdf global nodejs 16.19.0
+    asdf global nodejs 24.8.0
     asdf global bun 1.0.14
 fi
 
