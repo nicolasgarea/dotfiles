@@ -1,6 +1,4 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-export TERM="xterm-256color"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
@@ -9,13 +7,9 @@ if [ -f $ZPLUG_HOME/init.zsh ]; then
     source $ZPLUG_HOME/init.zsh
 fi
 
-# Async
 zplug "mafredri/zsh-async", from:github
-
-# Pure 
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-# Other plugins
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
@@ -26,16 +20,9 @@ zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
 
 zplug load
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
 ZSH_DISABLE_COMPFIX=true
 autoload -Uz compinit
-compinit
+compinit -C
 
 zstyle ':omz:update' mode auto
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -56,34 +43,23 @@ else
     export EDITOR='nvim'
 fi
 
-# GPG
 export GPG_TTY=$(tty)
 
-# asdf
-export ASDF_DIR="$HOME/.asdf"
-if [ -f $ASDF_DIR/asdf.sh ]; then
-    . $ASDF_DIR/asdf.sh
-    fpath=($ASDF_DIR/completions $fpath)
-    autoload -Uz compinit
-    compinit
-fi
-
-# NodeJS and Bun (React)
-if command -v asdf >/dev/null 2>&1; then
-    asdf global nodejs 24.8.0
-    asdf global bun 1.0.14
-fi
-
-# Java (Spring)
-if command -v asdf >/dev/null 2>&1; then
-    asdf global java openjdk-21
-fi
-
-
+# nvm (lazy - loads on first use)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+_load_nvm() {
+    unset -f nvm node npm npx ng
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+}
+nvm() { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm() { _load_nvm; npm "$@"; }
+npx() { _load_nvm; npx "$@"; }
+ng() { _load_nvm; ng "$@"; }
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Angular CLI completion (cached)
+_NG_CACHE="$HOME/.cache/zsh/ng-completion.zsh"
+if [ -f "$_NG_CACHE" ]; then
+    source "$_NG_CACHE"
+fi

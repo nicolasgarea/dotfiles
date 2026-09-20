@@ -10,7 +10,7 @@ TERM = "alacritty"
 
 [window]
 dynamic_title = true
-opacity = 0.92
+opacity = 0.97
 startup_mode = "Windowed"
 
 [window.padding]
