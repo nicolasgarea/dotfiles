@@ -1,0 +1,30 @@
+[general]
+import = [
+  "~/.config/alacritty/colors.toml",
+  "~/.config/alacritty/fonts.toml",
+]
+live_config_reload = true
+
+[env]
+TERM = "alacritty"
+
+[window]
+dynamic_title = true
+opacity = 0.92
+startup_mode = "Windowed"
+
+[window.padding]
+x = 20
+y = 20
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
