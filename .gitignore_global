@@ -1,0 +1,23 @@
+# === SYSTEM ===
+*~
+*.swp
+*.swo
+.DS_Store
+
+# === IDEs / EDITORS ===
+.idea/
+.vscode/
+*.iml
+
+# === NODE / FRONTEND ===
+node_modules/
+dist/
+build/
+
+# === TEMPORARY / LOG FILES ===
+*.log
+*.tmp
+*.bak
+
+# === ENVIRONMENT VARIABLES ===
+.env

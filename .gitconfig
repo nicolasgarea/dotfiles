@@ -1,0 +1,16 @@
+[user]
+	name = Nicolas Garea
+	email = nicogareacidre@gmail.com
+
+[color]
+	ui = auto
+
+[core]
+	editor = nano
+	excludesFile = ~/.gitignore_global
+
+[push]
+	default = current
+
+[init]
+	defaultBranch = main
