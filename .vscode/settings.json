@@ -1,14 +1,16 @@
 {
-    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+    "editor.fontLigatures": true,
     "editor.detectIndentation": true,
     "editor.guides.bracketPairs": true,
     "editor.inlineSuggest.enabled": true,
     "editor.suggestSelection": "first",
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.minimap.enabled": false,
-    "extensions.ignoreRecommendations": true,
+    "diffEditor.ignoreTrimWhitespace": false,
 
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "onFocusChange",
     "files.eol": "\n",
     "files.exclude": {
         "**/.git": true,
@@ -16,7 +18,6 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/tmp": true,
         "**/node_modules": true,
         "**/dist": true
     },
@@ -28,34 +29,6 @@
         "**/.bloop": true,
         "**/.metals": true
     },
-
-    "git.mergeEditor": false,
-    "git.openRepositoryInParentFolders": "always",
-
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.profiles.linux": {
-        "zsh": {
-            "path": "/usr/bin/zsh"
-        }
-    },
-    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-
-    "workbench.colorTheme": "Nordracula",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.editorActionsLocation": "hidden",
-    "workbench.settings.applyToAllProfiles": [],
-    "window.zoomLevel": -1,
-
-    "chat.commandCenter.enabled": false,
-    "github.copilot.enable": {
-        "*": false,
-        "markdown": false,
-        "scminput": false
-    },
-
-    "docker.extension.enableComposeLanguageServer": false,
-    "python.defaultInterpreterPath": "/bin/python3",
 
     "explorer.confirmDelete": false,
     "explorer.fileNesting.patterns": {
@@ -73,18 +46,60 @@
         "*.s3db": "${capture}.${extname}-*"
     },
 
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    "git.mergeEditor": false,
+    "git.openRepositoryInParentFolders": "always",
+
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.iconTheme": "symbols",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.settings.applyToAllProfiles": [],
+    "window.zoomLevel": -1,
+
+    "workbench.colorCustomizations": {
+        "[One Dark Pro Flat]": {
+            "editor.background": "#1E2128",
+            "sideBar.background": "#1E2128",
+            "panel.background": "#1E2128",
+            "activityBar.background": "#1E2128",
+            "titleBar.activeBackground": "#1E2128",
+            "tab.activeBackground": "#1E2128",
+            "editorGroupHeader.tabsBackground": "#1E2128",
+            "terminal.background": "#1E2128",
+            "terminal.foreground": "#ABB2BF",
+            "terminal.ansiBlack": "#1E2128",
+            "terminal.ansiRed": "#E06B74",
+            "terminal.ansiGreen": "#98C379",
+            "terminal.ansiYellow": "#E5C07A",
+            "terminal.ansiBlue": "#62AEEF",
+            "terminal.ansiMagenta": "#C778DD",
+            "terminal.ansiCyan": "#55B6C2",
+            "terminal.ansiWhite": "#ABB2BF",
+            "terminal.ansiBrightBlack": "#50545B",
+            "terminal.ansiBrightRed": "#EA757E",
+            "terminal.ansiBrightGreen": "#A2CD83",
+            "terminal.ansiBrightYellow": "#EFCA84",
+            "terminal.ansiBrightBlue": "#6CB8F9",
+            "terminal.ansiBrightMagenta": "#D282E7",
+            "terminal.ansiBrightCyan": "#5FC0CC",
+            "terminal.ansiBrightWhite": "#B5BCC9"
+        }
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+    "extensions.ignoreRecommendations": true,
+    "chat.commandCenter.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": false,
+        "scminput": false
     },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
+    "docker.extension.enableComposeLanguageServer": false,
+
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python",
-        "editor.formatOnType": true
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "[dockercompose]": {
         "editor.insertSpaces": true,
