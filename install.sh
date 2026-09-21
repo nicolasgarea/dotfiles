@@ -126,7 +126,7 @@ link_configs() {
   link "$DOTFILES/.gitconfig"               "$HOME/.gitconfig"
   link "$DOTFILES/.gitignore_global"        "$HOME/.gitignore_global"
   link "$DOTFILES/.config/alacritty"        "$HOME/.config/alacritty"
-  link "$DOTFILES/.vscode/settings.json"    "$HOME/.config/Code/User/settings.json"
+  link "$DOTFILES/vscode/settings.json"    "$HOME/.config/Code/User/settings.json"
 }
 
 set_shell() {
